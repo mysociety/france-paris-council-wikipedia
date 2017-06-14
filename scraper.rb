@@ -67,6 +67,5 @@ wikipedia_url = 'https://fr.wikipedia.org/wiki/Liste_des_conseillers_de_Paris'
 page = scrape(wikipedia_url => ParisCouncilPage)
 
 page.councillors.each do |c|
-  p c.to_h
   ScraperWiki.save_sqlite([:id], c.to_h)
 end
